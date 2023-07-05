@@ -1,0 +1,309 @@
+:root {
+  --blue-dark: #19376d;
+  --smoky-white: #dde3e6;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: cursive;
+}
+/* ***************[ Waves By: Goodkatz ]*************** */
+/* **********************[waves]********************** */
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 183, 1) 0%,
+    rgba(0, 172, 193, 1) 100%
+  );
+  color: white;
+}
+.inner-header {
+  height: 8vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.inner-header p {
+  color: #08173a;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+}
+/* ***************[ verification code Container ]*************** */
+.container {
+  width: 40rem;
+  height: 28rem;
+  margin: 0.5rem auto;
+  padding-top: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3761ba;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+h1 {
+  color: white;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 30rem;
+    height: 24rem;
+    padding-top: 1.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--smoky-white);
+  font-size: 0.9rem;
+}
+form {
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  label {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  form {
+    margin-bottom: 1rem;
+  }
+}
+.div-form {
+  width: 34rem;
+  height: 7rem;
+  background-color: transparent;
+  border: 0.2rem solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+input {
+  width: 4rem;
+  height: 5rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #d5e7f5db;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  color: var(--blue-dark);
+}
+input:focus {
+  opacity: 60%;
+  border-color: var(--blue-dark);
+}
+@media (max-width: 768px) {
+  .div-form {
+    width: 26rem;
+    margin: 0.5rem auto;
+    justify-content: space-between;
+  }
+  input {
+    width: 3rem;
+    height: 4rem;
+  }
+}
+hr {
+  display: inline-block;
+  margin: 1rem;
+  width: 2rem;
+  height: 0.3rem;
+  position: relative;
+  top: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: var(--blue-dark);
+}
+@media (max-width: 768px) {
+  hr {
+    width: 1.5rem;
+    height: 0.2rem;
+    margin: 0.1rem;
+    top: 1.3rem;
+  }
+}
+/* ***************[ loader ]*************** */
+.loader {
+  visibility: hidden;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+@media (max-width: 768px) {
+  .loader {
+    margin-bottom: 0.5rem;
+  }
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 2px solid var(--blue-dark);
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: rotationBack 1.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 1rem;
+  height: 1rem;
+  border-color: #fff;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* ---------------button------------------*/
+.button-confirm {
+  height: 3.3rem;
+  background-color: var(--blue-dark);
+  border: 0;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  bottom: -1.1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+@media (max-width: 768px) {
+  .button-confirm {
+    width: 9rem;
+    height: 2.5rem;
+  }
+}
+.button-confirm:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 92%;
+}
+.input-end {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+  background-image: linear-gradient(var(--smoky-white) 0%, #08173a 0%);
+}
+@media (min-width: 768px) {
+  .button-confirm {
+    padding: 16px 48px;
+  }
+}
